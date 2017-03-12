@@ -1,0 +1,18 @@
+<%- include('header') %>
+<table class="table table-striped">
+  <tbody>
+<% for(var i=0;i<users.length;i++){ %>
+    <tr>
+      <td><img class="avatar" src="/img/<%= users[i].avatar %>"></td>
+      <td></td>
+      <td><%=users[i].name%></td>
+      <td><%= ({m: '男', f: '女', x: '保密'})[users[i].gender] %></td>
+      <td><%= users[i].bio %></td>
+      <td><a href="/manage/users/<%= users[i]._id %>">删除</a><td>
+    </tr>
+
+<% } %>
+ </tbody>
+</table>
+
+<%- include('footer') %>
